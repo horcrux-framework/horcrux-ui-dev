@@ -107,5 +107,5 @@ This simulates consuming your component via the ShadCN CLI using your local regi
 ## 📜 License
 
 Horcrux is open-source under the [Apache License 2.0](./LICENSE).  
-© 2025 [dgtalbug](https://github.com/dgtalbug)s
+© 2025 [dgtalbug](https://github.com/dgtalbug)
 
