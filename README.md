@@ -1,72 +1,111 @@
-# shadcn Storybook Registry
+# horcrux-ui-dev
 
-This is a registry of [storybook](https://storybook.js.org/) stories for all the
-[shadcn](https://ui.shadcn.com/) components. Build using the
-[shadcn-registry-template](https://github.com/shadcn-ui/registry-template) and
-using the shadcn CLI to build the registry.
+A ShadCN-powered component development environment for the [Horcrux Framework](https://github.com/dgtalbug).  
+This workspace includes:
 
-> **Migrating to Storybook v9**
->
-> The registry is now using Storybook v9. This means that the components are now
-> using the latest `storybook/\*` packages. Depending on the framework you are
-> using, you may need to update the stories once imported.
->
-> If you have not migrated to Storybook v9 yet, you can still use the previous
-> registry by replacing the `**/registry/**` path with `**/v1/r/**`. These
-> versions will be kept as an archive and never updated.
->
-> If you have any questions, please open an issue.
+- 📘 [Storybook](https://storybook.js.org/) for visual component testing
+- 🧰 A [shadcn](https://ui.shadcn.com/) CLI-compatible `registry.json`
+- 🧪 Component-level testing setup with [Vitest](https://vitest.dev/)
+- 🎨 Design system experiments built using Radix UI and TailwindCSS
 
-## How to Use
+> This project uses **Storybook v9** and supports registry-driven component sharing across Horcrux apps.
 
-The shadcn CLI allows you to import any component or file as long as you point
-it to a registry JSON. This registry is a JSON file that contains all the
-information needed to build the registry.
+---
+
+## 📦 How to Use
+
+The `shadcn` CLI allows you to import any component by pointing to a registry JSON file.
 
 ```bash
 npx shadcn@latest add <Registry URL>
 ```
 
-## How to Contribute
+Example (local development):
 
-### Getting Started
+```bash
+npx shadcn@latest add http://localhost:3000/v2/r/button.json
+```
 
-1. Clone the repository
-2. Install the dependencies
+---
 
-   ```bash
-   bun install
-   ```
+## ⚙️ Local Development
 
-3. Run the development server
+### 1. Clone the Repository
 
-   ```bash
-   bun dev
-   ```
+```bash
+git clone https://github.com/dgtalbug/horcrux-ui-dev.git
+cd horcrux-ui-dev
+```
 
-4. Add/update the stories in the `src/registry` directory
-5. Add/update the `registry.json` file
-6. Build the registry
+### 2. Install Dependencies (using Bun)
 
-   ```bash
-   bun registry:build
-   ```
+```bash
+bun install
+```
 
-### Testing
+### 3. Start the Dev Server
 
-1. Run the local development server
+```bash
+bun dev
+```
 
-   ```bash
-   bun dev
-   ```
+### 4. Run Storybook
 
-2. test the registry by running the shadcn CLI
+```bash
+bun storybook
+```
 
-   ```bash
-   npx shadcn@latest add http://localhost:3000/v2/r/your-component.json
-   ```
+---
 
-## Documentation
+## 📁 Contributing & Registry
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view
-the full documentation.
+To add or update components and stories:
+
+1. Add or update your component in the `components/` folder  
+2. Create a story in `src/stories/`  
+3. Update or add the corresponding entry in `src/registry/`  
+4. Run the registry builder:
+
+```bash
+bun registry:build
+```
+
+---
+
+## 🧪 Testing Registry Locally
+
+While the dev server is running:
+
+```bash
+npx shadcn@latest add http://localhost:3000/v2/r/your-component.json
+```
+
+This simulates consuming your component via the ShadCN CLI using your local registry.
+
+---
+
+## 📚 Documentation
+
+- Horcrux Design System: _(coming soon)_
+- ShadCN Registry: [https://ui.shadcn.com/docs/registry](https://ui.shadcn.com/docs/registry)
+
+---
+
+## 🛠 Tech Stack
+
+- [Next.js 15 (Turbopack)](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [Storybook 9](https://storybook.js.org/blog/storybook-9/)
+- [TailwindCSS 4](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [Vitest](https://vitest.dev/)
+- [Bun](https://bun.sh/)
+- [shadcn/ui](https://ui.shadcn.com/)
+
+---
+
+## 🪪 License
+
+This project is licensed under the [Apache License 2.0](./LICENSE).  
+© 2025 [dgtalbug](https://github.com/dgtalbug)
+
