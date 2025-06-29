@@ -1,4 +1,4 @@
-# horcrux-ui-dev
+# Horcrux UI Dev
 
 A ShadCN-powered component development environment for the [Horcrux Framework](https://github.com/dgtalbug).  
 This workspace includes:
